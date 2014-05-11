@@ -22,7 +22,7 @@ Or install it yourself as:
 api = Doctorapi::Client.new
 api.host = "http://localhost:3000"
 api.authentication_token = "492fe3c6-5b2f-4ec9-897b-3b7d836ce61d"
-api.issues.each do |i|
+api.patient_issues.each do |i|
   puts i.to_s
 end
 ```

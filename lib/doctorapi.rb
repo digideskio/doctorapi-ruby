@@ -8,8 +8,8 @@ module Doctorapi
     include HttpClient
     include CollectionMethods
 
-    def issues
-      data = get request("patient/rash_issues")
+    def patient_issues
+      data = get request("patient/issues")
       collection(data, Data)
     end
   end
