@@ -1,6 +1,6 @@
 require "ostruct"
 
-module Doctorapi
+module DoctorapiWrapper
   module HttpClient
     class Request < OpenStruct
       attr_reader :headers

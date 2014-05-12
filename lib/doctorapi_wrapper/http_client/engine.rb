@@ -1,7 +1,7 @@
-require "doctorapi/json_parser"
+require "doctorapi_wrapper/json_parser"
 require "rest-client"
 
-module Doctorapi
+module DoctorapiWrapper
   module HttpClient
     class Engine
       class UnprocessableEntity < StandardError; end

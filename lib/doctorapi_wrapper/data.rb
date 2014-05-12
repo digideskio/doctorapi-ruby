@@ -1,6 +1,6 @@
 require "hashie"
 
-module Doctorapi
+module DoctorapiWrapper
   class Data < Hashie::Mash
   end
 end

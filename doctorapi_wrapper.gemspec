@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'doctorapi/version'
+require 'doctorapi_wrapper/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "doctorapi_client"
-  spec.version       = Doctorapi::VERSION
+  spec.name          = "doctorapi_wrapper"
+  spec.version       = DoctorapiWrapper::VERSION
   spec.authors       = ["Pawel Lewinski", "Piotr Kurek"]
   spec.email         = ["lewy313@gmail.com"]
   spec.summary       = %q{ruby client for goderma doctor api}

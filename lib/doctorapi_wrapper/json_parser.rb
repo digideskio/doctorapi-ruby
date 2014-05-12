@@ -1,6 +1,6 @@
 require "oj"
 
-module Doctorapi
+module DoctorapiWrapper
   class JsonParser
     def parse(data)
       Oj.load(data)

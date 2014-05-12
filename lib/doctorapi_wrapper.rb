@@ -1,9 +1,9 @@
-require "doctorapi/version"
-require "doctorapi/data"
-require "doctorapi/collection_methods"
-require "doctorapi/http_client"
+require "doctorapi_wrapper/version"
+require "doctorapi_wrapper/data"
+require "doctorapi_wrapper/collection_methods"
+require "doctorapi_wrapper/http_client"
 
-module Doctorapi
+module DoctorapiWrapper
   class Client
     include HttpClient
     include CollectionMethods

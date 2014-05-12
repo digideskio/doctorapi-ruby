@@ -1,9 +1,9 @@
 require "uri"
 
-require "doctorapi/http_client/engine"
-require "doctorapi/http_client/request"
+require "doctorapi_wrapper/http_client/engine"
+require "doctorapi_wrapper/http_client/request"
 
-module Doctorapi
+module DoctorapiWrapper
   module HttpClient
     attr_accessor :authentication_token
     attr_reader   :host
