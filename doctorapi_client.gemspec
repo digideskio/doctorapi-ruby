@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'doctorapi/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "doctorapi"
+  spec.name          = "doctorapi_client"
   spec.version       = Doctorapi::VERSION
   spec.authors       = ["Pawel Lewinski", "Piotr Kurek"]
   spec.email         = ["lewy313@gmail.com"]
