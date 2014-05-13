@@ -9,27 +9,36 @@ module DoctorapiWrapper
     attr_reader   :host
 
     def get(request)
-      request.headers[:accept] = :json
-      request.headers["X-AUTH-TOKEN"] = authentication_token
-
       client.get(request)
+    end
+
+    def post(request)
+      client.post(request)
     end
 
     def host=(url)
       @host = URI(url)
     end
 
-    def request(endpoint)
-      Request.new(
-        url: host.merge(endpoint),
-        token: authentication_token,
-      )
+    def request(args = {})
+      args[:url]      = host.merge(args[:url])
+      args[:token]    = authentication_token
+      args[:headers]  = default_headers
+
+      Request.new(args)
     end
 
     private
 
     def client
       @http_client ||= Engine.new
+    end
+
+    def default_headers
+      {
+        accept: :json,
+        "X-AUTH-TOKEN" => authentication_token
+      }
     end
   end
 end
