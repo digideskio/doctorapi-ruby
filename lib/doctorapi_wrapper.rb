@@ -9,12 +9,12 @@ module DoctorapiWrapper
     include CollectionMethods
 
     def patient_issues
-      data = get request(url: "patient/issues")
+      data = get request(endpoint: "patient/issues")
       collection(data, Data)
     end
 
     def patient_answers(body)
-      data = post request(url: "patient/answers", body: body)
+      data = post request(endpoint: "patient/answers", body: body)
 
       Data.new(data)
     end

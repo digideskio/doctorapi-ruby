@@ -21,7 +21,7 @@ module DoctorapiWrapper
     end
 
     def request(args = {})
-      args[:url]      = host.merge(args[:url])
+      args[:url]      = host.merge(args[:endpoint])
       args[:token]    = authentication_token
       args[:headers]  = default_headers
 
