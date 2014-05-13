@@ -5,10 +5,10 @@ module DoctorapiWrapper
     class Request < OpenStruct
       attr_reader :headers
 
-      def initialize(*args)
+      def initialize(args = {})
         super
 
-        @headers = {}
+        @headers = args.fetch(:headers, {})
       end
     end
   end
