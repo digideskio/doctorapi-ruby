@@ -18,5 +18,10 @@ module DoctorapiWrapper
 
       Data.new(data)
     end
+
+    def doctors
+      data = get request(endpoint: "doctors")
+      collection(data, Data)
+    end
   end
 end
