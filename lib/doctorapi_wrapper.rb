@@ -23,5 +23,62 @@ module DoctorapiWrapper
       data = get request(endpoint: "doctors")
       collection(data, Data)
     end
+
+    def create_patient_api_token(body)
+      data = post request(endpoint: "patient/api_tokens", body: body)
+
+      Data.new(data)
+    end
+
+    def create_patient_account(body)
+      data = post request(endpoint: "patient/account", body: body)
+
+      Data.new(data)
+    end
+
+    def create_mole_issue(body)
+      data = post request(endpoint: "patient/mole_issues", body: body)
+
+      Data.new(data)
+    end
+
+    def create_rash_issue(body)
+      data = post request(endpoint: "patient/rash_issues", body: body)
+
+      Data.new(data)
+    end
+
+    def assign_doctor(body)
+      data = post request(endpoint: "doctor_assignments", body: body)
+
+      Data.new(data)
+    end
+
+    def create_question(body)
+      raise ArgumentError unless body[:issue_id]
+
+      endpoint  = "issues/#{body[:issue_id]}/questions"
+      data      = post request(endpoint: endpoint, body: body)
+
+      Data.new(data)
+    end
+
+    def create_diagnosis(body)
+      raise ArgumentError unless body[:issue_id]
+
+      endpoint  = "issues/#{body[:issue_id]}/diagnoses"
+      data      = post request(endpoint: endpoint, body: body)
+
+      Data.new(data)
+    end
+
+    def create_refusal(body)
+      raise ArgumentError unless body[:issue_id]
+
+      endpoint  = "issues/#{body[:issue_id]}/refusals"
+      data      = post request(endpoint: endpoint, body: body)
+
+      Data.new(data)
+    end
   end
 end
