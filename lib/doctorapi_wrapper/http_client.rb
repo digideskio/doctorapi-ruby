@@ -22,7 +22,7 @@ module DoctorapiWrapper
 
     def request(args = {})
       req                         = Request.new(args)
-      req.url                     = URI.join(host, args.fetch(:endpoint))
+      req.url                     = host.merge(args.fetch(:endpoint))
       req.headers[:accept]        = :json
       req.headers["X-AUTH-TOKEN"] = authentication_token
 
