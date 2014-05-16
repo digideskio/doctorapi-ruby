@@ -80,5 +80,9 @@ module DoctorapiWrapper
 
       Data.new(data)
     end
+
+    def create_patient_answer(body)
+      post request endpoint: "patient/answers", body: body
+    end
   end
 end
