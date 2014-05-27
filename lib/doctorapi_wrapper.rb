@@ -10,7 +10,7 @@ module DoctorapiWrapper
 
     def patient_issues
       data = get request(endpoint: "patient/issues")
-      collection(data, Data)
+      collection(data["issues"], Data)
     end
 
     def patient_answers(body)
@@ -21,7 +21,7 @@ module DoctorapiWrapper
 
     def doctors
       data = get request(endpoint: "doctors")
-      collection(data, Data)
+      collection(data["doctors"], Data)
     end
 
     def create_patient_api_token(body)
