@@ -42,6 +42,12 @@ module DoctorapiWrapper
       Data.new(data)
     end
 
+    def create_doctor_api_token(body)
+      data = post request(endpoint: "api_tokens", body: body)
+
+      Data.new(data)
+    end
+
     def create_mole_issue(body)
       data = post request(endpoint: "patient/mole_issues", body: body)
 
