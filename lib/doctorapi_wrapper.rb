@@ -102,5 +102,9 @@ module DoctorapiWrapper
     def create_patient_answer(body)
       post request endpoint: "patient/answers", body: body
     end
+
+    def create_fake_issues
+      post request endpoint: "fake_issues"
+    end
   end
 end
