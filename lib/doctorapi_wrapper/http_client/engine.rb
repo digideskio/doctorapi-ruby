@@ -7,16 +7,19 @@ module DoctorapiWrapper
       class UnprocessableEntity < StandardError; end
       class Unauthorized < StandardError; end
 
-      def initialize
+      attr_reader :host
+
+      def initialize(host)
         @json_parser = JsonParser.new
+        @host = host
       end
 
       def get(request)
-        client.get(request.url.to_s, request.headers, &handler)
+        client[request.url.to_s].get(request.headers, &handler)
       end
 
       def post(request)
-        client.post(request.url.to_s, request.body, request.headers, &handler)
+        client[request.url.to_s].post(request.body, request.headers, &handler)
       end
 
       private
@@ -37,7 +40,7 @@ module DoctorapiWrapper
       end
 
       def client
-        RestClient
+        RestClient::Resource.new(host, verify_ssl: false)
       end
     end
   end
