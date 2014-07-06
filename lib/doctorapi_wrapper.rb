@@ -106,5 +106,12 @@ module DoctorapiWrapper
     def create_fake_issues
       post request endpoint: "fake_issues"
     end
+
+    def get_invite_code(id, body = {})
+      endpoint  = "invite_codes/#{id}"
+      data      = get request(endpoint: endpoint, body: body)
+
+      Data.new(data)
+    end
   end
 end
