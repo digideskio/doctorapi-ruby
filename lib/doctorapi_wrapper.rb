@@ -19,8 +19,8 @@ module DoctorapiWrapper
       Data.new(data)
     end
 
-    def doctors
-      data = get request(endpoint: "doctors")
+    def doctors(params = {})
+      data = get request(endpoint: "doctors", params: params)
       collection(data["doctors"], Data)
     end
 

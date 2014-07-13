@@ -12,7 +12,12 @@ module DoctorapiWrapper
       end
 
       def get(request)
-        client.get(request.url.to_s, request.headers, &handler)
+        # I was forced to use this workaround because RestClient handle params and headers differently in #get and #post request
+        # https://github.com/rest-client/rest-client/issues/133
+        data = request.headers
+        data[:params] = request.params
+
+        client.get(request.url.to_s, data, &handler)
       end
 
       def post(request)
