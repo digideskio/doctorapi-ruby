@@ -113,5 +113,12 @@ module DoctorapiWrapper
 
       Data.new(data)
     end
+
+    def get_page(id, body = {})
+      endpoint  = "pages/#{id}"
+      data      = get request(endpoint: endpoint, body: body)
+
+      Data.new(data)
+    end
   end
 end
