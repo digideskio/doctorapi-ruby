@@ -16,6 +16,10 @@ module DoctorapiWrapper
       client.post(request)
     end
 
+    def put(request)
+      client.put(request)
+    end
+
     def host=(url)
       @host = URI(url)
     end

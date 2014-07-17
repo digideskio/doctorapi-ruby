@@ -24,6 +24,10 @@ module DoctorapiWrapper
         client.post(request.url.to_s, request.body, request.headers, &handler)
       end
 
+      def put(request)
+        client.put(request.url.to_s, request.body, request.headers, &handler)
+      end
+
       private
 
       def handler

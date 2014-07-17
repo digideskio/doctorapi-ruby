@@ -36,6 +36,10 @@ module DoctorapiWrapper
       Data.new(data)
     end
 
+    def update_patient_account(body)
+      put request(endpoint: "patient/account", body: body)
+    end
+
     def create_doctor(body)
       data = post request(endpoint: "account", body: body)
 
