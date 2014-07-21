@@ -44,6 +44,10 @@ module DoctorapiWrapper
       get request(endpoint: "patient/account")
     end
 
+    def assign_patient_to_doctor(body)
+      post request(endpoint: "patient/assignments", body: body)
+    end
+
     def create_doctor(body)
       data = post request(endpoint: "account", body: body)
 
