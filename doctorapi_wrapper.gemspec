@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "pry"
 
-  spec.add_dependency 'rest-client', '~> 1.6.7'
+  spec.add_dependency 'rest-client', '~> 1.7.2'
   spec.add_dependency 'oj', '~> 2.9.0'
   spec.add_dependency 'hashie', '~> 2.0.5'
 end
